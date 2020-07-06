@@ -1,7 +1,6 @@
 {
   "name": "comp397_s2020",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +16,14 @@
   },
   "homepage": "https://github.com/Priyank-Prajapati/COMP397_S2020#readme",
   "dependencies": {
-    "createjs": "^1.0.1"
-  }
+    "createjs": "^1.0.1",
+    "easeljs": "^1.0.2",
+    "preloadjs": "^1.0.1",
+    "soundjs": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/easeljs": "^1.0.0",
+    "@types/soundjs": "^0.6.28"
+  },
+  "description": ""
 }
