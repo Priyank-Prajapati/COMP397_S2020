@@ -17,7 +17,8 @@
         {id:"startButton", src:"./Assets/StartButton.png"},
         {id:"nextButton", src:"./Assets/NextButton.png"},
         {id:"previousButton", src:"./Assets/PreviousButton.png"},
-        {id:"background", src:"./Assets/Background.png"}
+        {id:"background", src:"./Assets/Background.png"},
+        {id:"player", src:"./Assets/Spaceship.png"}
     ];
     
     function Init(){
@@ -39,6 +40,7 @@
         createjs.Ticker.on("tick", Update);
 
         //set up default game states -- State Machine
+        objects.Game.stage = stage;
         objects.Game.currentScene = config.Scene.START;
         currentState = config.Scene.START;
         Main();
