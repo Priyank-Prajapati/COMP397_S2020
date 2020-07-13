@@ -24,21 +24,22 @@ var objects;
         }
         //methods
         Enemy.prototype.Start = function () {
-            this.x = 320;
-            this.y = -50;
+            this.Reset();
         };
         Enemy.prototype.Update = function () {
             this.Move();
             this.CheckBound();
         };
         Enemy.prototype.Reset = function () {
+            this.x = Math.floor(Math.random() * 540) + 50;
+            this.y = Math.floor(Math.random() * -800) - 50;
         };
         Enemy.prototype.Move = function () {
-            this.y += 0.5;
+            this.y += 5;
         };
         Enemy.prototype.CheckBound = function () {
-            if (this.y >= 900 + this.halfH) {
-                this.y = -50;
+            if (this.y >= 900 + this.halfH + 25) {
+                this.Reset();
             }
         };
         return Enemy;
