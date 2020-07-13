@@ -25,8 +25,6 @@ var objects;
         Player.prototype.Start = function () {
             this.x = 320;
             this.y = 700;
-            this.scaleX = 0.25;
-            this.scaleY = 0.25;
         };
         Player.prototype.Update = function () {
             this.Move();
@@ -40,6 +38,14 @@ var objects;
             //this will eventually be replaced with the keyboard input
         };
         Player.prototype.CheckBound = function () {
+            //right boundary
+            if (this.x >= 640 - this.halfW) {
+                this.x = 640 - this.halfW;
+            }
+            //left boundary
+            if (this.x <= this.halfW) {
+                this.x = this.halfW;
+            }
         };
         return Player;
     }(objects.GameObject));

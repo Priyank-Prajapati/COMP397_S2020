@@ -11,9 +11,6 @@ module objects{
         public Start():void{
             this.x = 320;
             this.y = 700;
-
-            this.scaleX = 0.25;
-            this.scaleY = 0.25;
         }
 
         public Update():void{
@@ -33,7 +30,16 @@ module objects{
         }
 
         public CheckBound():void{
-
+            //right boundary
+            if(this.x >= 640-this.halfW)
+            {
+                this.x = 640-this.halfW;
+            }
+            //left boundary
+            if(this.x <= this.halfW)
+            {
+                this.x = this.halfW;
+            }
         }
     }
 }

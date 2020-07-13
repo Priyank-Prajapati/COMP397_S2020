@@ -23,32 +23,21 @@ var scenes;
         }
         PlayScene.prototype.Start = function () {
             //Inititalize our variables
-            this.playLabel = new objects.Label("Game Playing", "40px", "Consolas", "#000000", 320, 240, true);
-            this.nextButton = new objects.Button(this.assetManager, "nextButton", 320, 300);
-            this.previousButton = new objects.Button(this.assetManager, "previousButton", 120, 300);
             this.background = new objects.Background(this.assetManager);
             this.player = new objects.Player(this.assetManager);
+            this.enemy = new objects.Enemy(this.assetManager);
             this.Main();
         };
         PlayScene.prototype.Update = function () {
-            this.background.Update();
+            //this.background.Update();
             this.player.Update();
+            this.enemy.Update();
         };
         PlayScene.prototype.Main = function () {
             this.addChild(this.background);
-            this.addChild(this.playLabel);
             this.addChild(this.player);
-            this.addChild(this.nextButton);
-            this.addChild(this.previousButton);
+            this.addChild(this.enemy);
             //register for the click events
-            this.nextButton.on("click", this.nextButtonClick);
-            this.previousButton.on("click", this.previousButtonClick);
-        };
-        PlayScene.prototype.nextButtonClick = function () {
-            objects.Game.currentScene = config.Scene.OVER;
-        };
-        PlayScene.prototype.previousButtonClick = function () {
-            objects.Game.currentScene = config.Scene.START;
         };
         return PlayScene;
     }(objects.Scene));
