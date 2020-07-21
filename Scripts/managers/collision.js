@@ -10,7 +10,12 @@ var managers;
             if (math.Vec2.Distance(P1, P2) < (obj1.halfH + obj2.halfH)) {
                 if (!obj2.isColliding) {
                     //react to the collision
-                    console.log("Collision with " + obj2.name);
+                    //check what did it collide with
+                    switch (obj2.name) {
+                        case "enemy":
+                            createjs.Sound.play("explosion");
+                            break;
+                    }
                     obj2.isColliding = true;
                 }
             }

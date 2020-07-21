@@ -7,6 +7,7 @@ module scenes{
         //private enemy:objects.Enemy;
         private enemies:objects.Enemy[];
         private enemyNum:number;
+        private backgroundMusic: createjs.AbstractSoundInstance;
 
         //constructor
         constructor(assetManager:createjs.LoadQueue){
@@ -25,6 +26,11 @@ module scenes{
             for(let i = 0; i < this.enemyNum; i++){
                 this.enemies[i] = new objects.Enemy(this.assetManager);
             }
+
+            createjs.Sound.stop();
+            this.backgroundMusic = createjs.Sound.play("playMusic");
+            this.backgroundMusic.loop = -1;
+            this.backgroundMusic.volume = 0.2;
             this.Main();
         }
 
