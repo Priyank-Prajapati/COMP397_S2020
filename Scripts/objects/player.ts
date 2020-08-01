@@ -24,9 +24,17 @@ module objects{
 
         public Move():void{
             //need a reference to the stage createjs object to get mouse position
-            this.x = objects.Game.stage.mouseX;
+            //this.x = objects.Game.stage.mouseX;
 
             //this will eventually be replaced with the keyboard input
+            if(objects.Game.keyboardManager.moveLeft)
+            {
+                this.x -= 7.5;
+            }
+            if(objects.Game.keyboardManager.moveRight)
+            {
+                this.x += 7.5;
+            }
         }
 
         public CheckBound():void{
