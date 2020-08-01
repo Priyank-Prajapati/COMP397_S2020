@@ -36,10 +36,10 @@ var objects;
             //need a reference to the stage createjs object to get mouse position
             //this.x = objects.Game.stage.mouseX;
             //this will eventually be replaced with the keyboard input
-            if (objects.Game.keyboardManager.moveLeft) {
+            if (managers.Game.keyboardManager.moveLeft) {
                 this.x -= 7.5;
             }
-            if (objects.Game.keyboardManager.moveRight) {
+            if (managers.Game.keyboardManager.moveRight) {
                 this.x += 7.5;
             }
         };
