@@ -31,6 +31,9 @@ var scenes;
             for (var i = 0; i < this.enemyNum; i++) {
                 this.enemies[i] = new objects.Enemy(this.assetManager);
             }
+            this.scoreBoard = new managers.Scoreboard();
+            this.scoreBoard.x = 10;
+            this.scoreBoard.y = 10;
             createjs.Sound.stop();
             this.backgroundMusic = createjs.Sound.play("playMusic");
             this.backgroundMusic.loop = -1;
@@ -55,6 +58,7 @@ var scenes;
             this.enemies.forEach(function (e) {
                 _this.addChild(e);
             });
+            this.addChild(this.scoreBoard);
             //register for the click events
         };
         return PlayScene;
